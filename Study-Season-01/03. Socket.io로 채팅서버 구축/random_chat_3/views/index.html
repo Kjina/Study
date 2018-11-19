@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Chat</title>
+	<link rel="stylesheet" href="/stylesheets/style.css" />
+	<script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type ="text/javascript" src="/js/chat.js"></script>
+</head>
+<body>
+	<!-- 컨텐츠 영역 -->
+	<div id="contents">
+	<h1>chat</h1>
+	<div class="chat_content">
+		<!-- 로그인 영역 -->
+		<div class="chat_login">
+			<div id="chat_login_form" class="chat_login_form">
+				<input type="text" id="chat_id" class="login_input" value="ID 입력" onclick="$(this).val('');" />&nbsp;&nbsp;<a href="javascript:connection();">접속하기</a>
+			</div>
+			<!-- 현재접속자수 영역 -->
+			<div class="now_user_inner_chat"><strong>현재접속자수</strong> : <span id="now_user_inner_chat">-</span></div>
+		<!-- //로그인 영역 -->
+		</div>
+		<!-- 채팅창 영역 -->
+		<!-- 미접속시 보여지는 영역 -->
+		<div id="chat_form_no" class="chat_form">
+			ID 입력 후 접속해 주세요.
+		</div>
+		<div id="chat_form" class="chat_form" style="display: none;">
+			<!-- 채팅창 글 영역 -->
+			<div class="chat_list">
+				<ul id="chat_list"></ul>
+			</div>
+			<div class="chat_user">
+				<!-- 현재접속자 목록 영역 -->
+				<div class="chat_user_list">
+					<ul id="chat_user_list"></ul>
+				</div>
+			</div>
+			<!-- 입력 영역 -->
+			<div class="chat_input">
+				<input type="text" id="chat_input" class="chat_input_txt" value="대화 글을 입력하세요." onclick="$(this).val('');" />
+			</div>
+			<!-- 버튼 영역 -->
+			<div class="chat_btn">
+				<a href="javascript:chat_input();">입력</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:chat_out();">나가기</a>
+			</div>
+		<!-- //채팅창 영역 -->
+		</div>
+		<!-- 접속로그 영역 -->
+		<div class="chat_history">
+			<div class="chat_history_list">
+				<ul id="chat_logs"></ul>
+			</div>
+		<!-- //접속로그 영역 -->
+		</div>
+	</div>
+	<!-- //컨텐츠 영역 -->
+	</div>
+</body>
+</html>

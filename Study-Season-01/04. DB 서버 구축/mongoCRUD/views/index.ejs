@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Chat</title>
+		 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "/css/style.css">
+    	<script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    	<script type ="text/javascript" src="/js/chat.js"></script>
+	</head>
+	<body>
+	 	<div>
+	 		<h3> Insert </h3>
+	 		<form action="/insert" method="post">
+	 		 <input type="text" id="name" name="name" class="form-control" placeholder="name">
+	 		 <input type="text" id="message" name="message" class="form-control" placeholder="message">
+	 		  <button type="submit">Insert</button>
+	 		</form>
+	 	</div>
+	 	<div>
+	 		<h3> Get </h3>
+	 		<form action="/get" method="get">
+            <div>
+               <button type="submit">Get</button>
+            </div>
+            </form>
+	 	</div>
+	 	<div>
+	 		<h3> Update </h3>
+	 		<form action="/update" method="post">
+	 		<input type="text" id="id" name="id" class="form-control" placeholder="id">
+	 		 <input type="text" id="name" name="name" class="form-control" placeholder="name">
+	 		 <input type="text" id="message" name="message" class="form-control" placeholder="message">
+	 		  <button type="submit">Update</button>
+	 		</form>
+	 	</div>
+	 	<div>
+            <h3> Delete</h3>
+            <form action="/delete" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+	 	<div>
+            <h3> One Delete</h3>
+            <form action="/id_delete" method="post">
+                <input type="text" id="id" name="id" class="form-control" placeholder="id">
+                <button type="submit">One Delete</button>
+            </form>
+        </div>
+	</body>
+</html>
